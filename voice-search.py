@@ -5,7 +5,7 @@ import webbrowser
 
 def command():
     r = sr.Recognizer()
-    x = 0  # Initialize x here
+    x = 0  
     while True:
         with sr.Microphone() as source:
             print("Danta: Listening.....")
@@ -21,11 +21,11 @@ def command():
         
         x += 1
         if x == 1:
-            break  # This break will exit the loop after one attempt
+            break 
 
 while True:
     query = command().lower() 
-    if query:  # Check if the query is not empty
+    if query: 
         for i in search(query, tld="com", num=1, stop=1, pause=2):
             print(f"Opening: {i}")
             webbrowser.open(i)
